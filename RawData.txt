@@ -1,0 +1,89 @@
+{
+  "name": "Antyspam",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "bBkMl",
+  "actions": [
+    {
+      "member": "1",
+      "varName": "",
+      "dataName": "${serverVars(\"Serwer\")}.anty-spam",
+      "comparison": "1",
+      "value": "5",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "2",
+      "iffalseVal": "8",
+      "name": "Check Member Data"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "dataName": "${serverVars(\"Serwer\")}.interwencje",
+      "defaultVal": "0",
+      "storage": "1",
+      "varName2": "",
+      "name": "Store Member Data"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "dataName": "${serverVars(\"Serwer\")}.interwencje",
+      "changeType": "1",
+      "value": "1",
+      "name": "Control Member Data"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "dataName": "${serverVars(\"Serwer\")}.interwencje",
+      "defaultVal": "0",
+      "storage": "1",
+      "varName2": "interwencja",
+      "name": "Store Member Data"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "**${member} ty chuju nie spam!\nTo już moja ${tempVars(\"interwencja\")} interwencja w twojej sprawie zaraz dostaniesz warna!**",
+      "storage": "0",
+      "varName2": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Message"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "dataName": "${serverVars(\"Serwer\")}.anty-spam",
+      "changeType": "0",
+      "value": "0",
+      "name": "Control Member Data"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "dataName": "${serverVars(\"Serwer\")}.anty-spam",
+      "changeType": "1",
+      "value": "1",
+      "name": "Control Member Data"
+    },
+    {
+      "time": "10",
+      "measurement": "1",
+      "name": "Wait"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "dataName": "${serverVars(\"Serwer\")}.anty-spam",
+      "changeType": "0",
+      "value": "0",
+      "name": "Control Member Data"
+    }
+  ],
+  "comType": "3"
+}
